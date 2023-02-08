@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./layouts/Navbar";
+import Typography from "@mui/material/Typography";
+import Graphicon from "./assets/Logo.svg";
 
 function App() {
+  document.title = "Graphs";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Typography variant="h5" sx={{ textAlign: "center", fontWeight: "bold" }}>
+        Welcome to Graphs
+      </Typography>
+      <Typography sx={{ textAlign: "center", marginTop: "35px" }}>
+        <img src={Graphicon} width={200} alt="graphicon" />
+      </Typography>
+      <Typography sx={{ textAlign: "center", marginTop: "20px" }}>
+        Explore <b>Navbar</b> to see types of Graphs
+      </Typography>
+    </>
   );
 }
 

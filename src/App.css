@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+/* The parent element */
+.css-chart {
+  /* The chart borders */
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+
+  /* A little breathing room should there be others items around the chart */
+  margin: 1em;
+  /* Remove any padding so we have as much space to work with inside the element */
+  padding: 0;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* The unordered list holding the data points, no list styling and no spacing */
+.line-chart {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Each point on the chart, each a 12px circle with a light border */
+.data-point {
+  background-color: white;
+  border: 2px solid lightblue;
+  border-radius: 50%;
+  height: 12px;
+  position: absolute;
+  width: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.line-segment {
+  background-color: blue;
+  height: 3px;
+  position: absolute;
 }
