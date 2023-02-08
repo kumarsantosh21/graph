@@ -6,7 +6,7 @@ import HighchartGraph from "../components/HighChartGraph";
 const Static = () => {
   document.title = "Graphs | Static";
 
-  let xValues = ["monday", "tuesday", "wednesday", "thursday", "friday"];
+  let xValues = ["mon", "tues", "wednes", "thurs", "fri"];
   let yValues = [25, 60, 45, 50, 40];
   if (!Array.isArray(xValues) || !Array.isArray(yValues)) {
     xValues = [];

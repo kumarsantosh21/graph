@@ -5,7 +5,7 @@ import HighchartsReact from "highcharts-react-official";
 const HighchartGraph = ({ xValues, yValues }) => {
   let sample = [];
   yValues?.map((yData, i) => {
-    sample = [...sample, [xValues?.[i] + "", parseInt(yData)]];
+    sample = [...sample, parseInt(yData)];
     return sample;
   });
   const options = {
@@ -13,6 +13,9 @@ const HighchartGraph = ({ xValues, yValues }) => {
       backgroundColor: "white",
       type: "area",
       height: "350px",
+    },
+    xAxis: {
+      categories: xValues,
     },
     title: {
       text: '<h1 id="chart-title">Linear Graph  </h1>',
@@ -31,11 +34,11 @@ const HighchartGraph = ({ xValues, yValues }) => {
     },
     series: [
       {
-        name: ["series"],
+        name: ["Attendance"],
         data: sample,
         tooltip: {
           valuePrefix: "",
-          valueSuffix: "",
+          valueSuffix: "%",
           useHTML: true,
           enabled: true,
           backgroundColor: null,

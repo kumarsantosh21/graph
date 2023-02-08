@@ -9,11 +9,11 @@ const Dynamic = () => {
   document.title = "Graphs | Dynamic";
 
   const [values, setValues] = React.useState({
-    X1: 0,
-    X2: 0,
-    X3: 0,
-    X4: 0,
-    X5: 0,
+    X1: "mon",
+    X2: "tues",
+    X3: "wednes",
+    X4: "thurs",
+    X5: "fri",
     Y1: 0,
     Y2: 0,
     Y3: 0,
@@ -25,11 +25,11 @@ const Dynamic = () => {
   let yValues = [];
 
   const textFieldData1 = [
-    { label: "X1" },
-    { label: "X2" },
-    { label: "X3" },
-    { label: "X4" },
-    { label: "X5" },
+    { label: "X1", defaultValue: "mon" },
+    { label: "X2", defaultValue: "tues" },
+    { label: "X3", defaultValue: "wednes" },
+    { label: "X4", defaultValue: "thrus" },
+    { label: "X5", defaultValue: "frid" },
   ];
   const textFieldData2 = [
     { label: "Y1" },
@@ -42,8 +42,6 @@ const Dynamic = () => {
   const handleChange = (e) => {
     if (e.target.value) {
       setValues({ ...values, [e.target.name]: e.target.value });
-    } else {
-      setValues({ ...values, [e.target.name]: 0 });
     }
   };
   xValues = Object.values(values).slice(0, 5);
@@ -71,7 +69,7 @@ const Dynamic = () => {
                   label={data?.label}
                   name={data?.label}
                   variant="standard"
-                  defaultValue={0}
+                  defaultValue={data?.defaultValue}
                   onChange={handleChange}
                 />
               </Grid>
