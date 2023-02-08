@@ -49,7 +49,7 @@ const CssGraph = ({ xValues, yValues }) => {
     <>
       <figure className="css-chart" style={{ height: "300px", width: "300px" }}>
         <ul className="line-chart">{graphComponent}</ul>
-        <figcaption>series</figcaption>
+        <figcaption>Attendance</figcaption>
       </figure>
     </>
   );
