@@ -4,6 +4,7 @@ import CssGraph from "../components/CssGraph";
 import HighchartGraph from "../components/HighChartGraph";
 import { GET_GRAPH_DATA } from "../graphql/GET_GRAPH_DATA";
 import { useLazyQuery } from "@apollo/client";
+import LoadingSvg from "../assets/Loading.svg";
 
 const Network = () => {
   document.title = "Graphs | Network";
@@ -29,13 +30,27 @@ const Network = () => {
     GET_DATA();
   }, []);
 
+
   if (loading) {
-    return <>loading...</>;
+   return <div>
+      <img src={LoadingSvg} alt="loadingsvg" />
+    </div>;
   }
 
   if (error) {
     console.log(error);
-    return <>error</>;
+    return (
+      <div
+        style={{
+          color: "red",
+          textAlign: "center",
+          fontWeight: "bold",
+          fontSize: "50px",
+        }}
+      >
+        Error
+      </div>
+    );
   }
 
   return (
