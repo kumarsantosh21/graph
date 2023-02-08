@@ -26,8 +26,8 @@ const CssGraph = ({ xValues, yValues }) => {
         <div
           className="data-point"
           style={{
-            bottom: Math.abs(bottom - 6.5) + "px",
-            left: Math.abs(left - 9.5) + "px",
+            bottom: bottom === 0 ? "0px" : Math.abs(bottom - 6.5) + "px",
+            left: Math.abs(left - 6) + "px",
             zIndex: 1,
           }}
         ></div>
